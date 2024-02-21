@@ -1,6 +1,6 @@
 import express from "express";
 
-const host ='0.0.0.0.';
+const host ='0.0.0.0';
 const porta = 3000; 
 const app = express();
 
