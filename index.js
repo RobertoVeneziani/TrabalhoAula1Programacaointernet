@@ -11,7 +11,7 @@ app.get('/', (pega, devolve) => {
 
 app.get('/index.html', (pega, devolve) =>{
     devolve.write('<h1>Esse é o index.html</h1>');
-    cevolve.end();
+    devolve.end();
 })
 
 app.listen(porta, host, () =>{
