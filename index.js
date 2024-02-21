@@ -12,14 +12,14 @@ const app = express();
 
 app.use(express.urlencoded({extended:true})); 
 
-app.use(session((
+app.use(session({
     secret: "M1nH4Ch4v3S3cr3t4",
     resave: false,
     saveUninitialized: true,
     cookie: {
         maxAge: 60 * 100 * 15
     }
-)))
+}))
 
 app.post('/login', (requisicao, resposta)=>{
     const usuario = requisicao.body.usuario;
