@@ -1,0 +1,27 @@
+{
+  "name": "trabalhoaula1programacaointernet",
+  "version": "1.0.0",
+  "description": "Projeto aula 1 ads ead",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobertoVeneziani/TrabalhoAula1Programacaointernet.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "javascript",
+    "programação"
+  ],
+  "author": "Roberto veneziani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobertoVeneziani/TrabalhoAula1Programacaointernet/issues"
+  },
+  "homepage": "https://github.com/RobertoVeneziani/TrabalhoAula1Programacaointernet#readme"
+}
