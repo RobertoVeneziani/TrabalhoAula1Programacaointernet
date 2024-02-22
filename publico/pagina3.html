@@ -16,8 +16,11 @@
     <div class="evento">
       <img src="Imagens\Techno INPRUDENTE.jpg" alt="Techno INPRUDENTE.jpg">
       <h2>Techno Fest INPRUDENTE</h2>
+      <h3>Local: Zimmer</h3>
       <p>Data: 13 de Abril de 2024</p>
-      <button onclick="comprarIngresso(3)">Compre Aqui seu Ingresso</button>
+      <p>Quantidade: <input id="qtd" type="number" min="1" max="100"> </p>
+      <div id="valor">Valor:</div>
+      <button id="com">Compre Aqui seu Ingresso</button>
       <h2>Descrição do evento<br><br>
         Nosso primeiro encontro do ano já tem data!!
         Prepare-se para o primeiro evento do ano na Zimmer em Presidente Prudente! <br><br>Nesta noite, teremos a presença do fenômeno MC PH, conhecido por seus hits como "Let's Go 4" . MC PH é o cara do momento e promete um show único na sua primeira apresentação no estado.<br><br>
@@ -28,7 +31,7 @@
         Não perca tempo! Venha se reencontrar conosco na Zimmer!<br><br>
         Seja parte dessa experiência incrível e aproveite o melhor da música com MC PH e os DJs convidados. Não deixe para depois, pois os ingressos estão acabando! Garanta já o seu lugar nessa festa imperdível!<br><br>
         
-        Valor: R$ 100,00.
+        Valor: R$ 150,00.
         </h2>
       <br>
       <br>
@@ -41,6 +44,26 @@
     <p>&copy; 2024 CompreAqui Eventos. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    var But = document.getElementById("com");
+    var qtd = document.getElementById("qtd");
+    var res= document.getElementById("valor");
+    var valor = 150;
+    var qtdint = parseInt(qtd.value)
+
+    
+
+    qtd.addEventListener("blur", function() {
+    res.value=qtd.value*valor;
+    res.innerHTML='Valor total: R$ '+res.value;
+// Alerta quando o botão for clicado
+// alert("Você clicou no botão!");
+    });
+
+    But.addEventListener("click", function() {
+        alert("Você comprou " + qtd.value + " ingressos por: R$" + res.value + ", obrigado!");
+    });
+
+</script>
 </body>
 </html>

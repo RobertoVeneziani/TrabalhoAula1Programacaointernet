@@ -11,3 +11,5 @@ function validar(e) {
 }
 
 form.addEventListener('submit', validar)
+
+

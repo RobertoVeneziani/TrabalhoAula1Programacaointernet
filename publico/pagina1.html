@@ -16,12 +16,15 @@
     <div class="evento">
       <img src="Imagens\Fernando e Sorocaba.jpg" alt="Fernando e Sorocaba.jpg">
       <h2>Show Fernando e Sorocaba</h2>
+      <h3>Local: Chácara do Patrão</h3>
       <p>Data: 30 de Março de 2024</p>
-      <button onclick="comprarIngresso(1)">Compre Aqui seu Ingresso</button>
+      <p>Quantidade: <input id="qtd" type="number" min="1" max="100"> </p>
+      <div id="valor">Valor:</div>
+      <button id="com">Compre Aqui seu Ingresso</button>
       <h2>DESCRIÇÃO DO EVENTO<br><br>
         ISTO É CHURRASCO ON FIRE COM FERNANDO & SOROCABA.<br><br>
         
-       Marcando o retorno da dupla ao palco de Presidente Prudente, Fernando & Sorocaba apresentam seu novo projeto “Isso é Churrasco On Fire”. O melhor da música sertaneja encontra a tradição do churrasco e proporciona 3 horas de música acompanhada de 4 horas OPEN CHURRAS no seu The Place To Be.<br><br>
+       Marcando o retorno da dupla ao palco de Presidente Prudente, Fernando & Sorocaba apresentam seu novo projeto “Isso é Churrasco On Fire”. O melhor da música sertaneja encontra a tradição do churrasco e proporciona 3 horas de música acompanhada de 4 horas OPEN CHURRAS na chacara do patrão.<br><br>
        Essa experiência inédita será embalada pelos hits que marcaram gerações ao longo dos 15 anos de carreira da dupla como “Madri”, “Delegada” e “Estou Apaixonado”, enquanto chefs especialistas em churrasco assinam o open food exclusivo desse evento. <br><br>
        O evento foi criado em 2019 para proporcionar ao público uma viagem sensorial, entre música e churrasco, unindo duas paixões dos brasileiros. O “Isso é Churrasco” chega para aqueles que desejam não só um evento, mas uma experiência completa e inesquecível, e dessa vez, no melhor parador de praia do Brasil.<br><br>
         
@@ -53,6 +56,26 @@
     <p>&copy; 2024 CompreAqui Eventos. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+                var But = document.getElementById("com");
+                var qtd = document.getElementById("qtd");
+                var res= document.getElementById("valor");
+                var valor = 300;
+                var qtdint = parseInt(qtd.value)
+
+                
+
+                qtd.addEventListener("blur", function() {
+                res.value=qtd.value*valor;
+                res.innerHTML='Valor total: R$ '+res.value;
+      // Alerta quando o botão for clicado
+     // alert("Você clicou no botão!");
+                });
+
+                But.addEventListener("click", function() {
+                    alert("Você comprou " + qtd.value + " ingressos por: R$" + res.value + ", obrigado!");
+                });
+
+  </script>
 </body>
 </html>
