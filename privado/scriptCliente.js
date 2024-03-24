@@ -36,4 +36,41 @@ function cadastrarCliente(cliente){
         },
         body: JSON.stringify(cliente)
     })
+    .then((resposta)=>{
+        return resposta.json();
+    })
+    .then((dados)=>{
+        if (dados.status){
+            mostrarMensagem(dados.mensagem, true);
+        }
+        else{
+            mostrarMensagem(dados.mensagem, false);
+            }
+    })
+    .catch((erro) =>{
+        mostrarMensagem(erro.mensage, false)
+    });
+}
+
+function mostrarMensagem(mensagem, sucesso = false){
+    const divMensagem = document.getElementById('mensagem');
+    if (sucesso){
+        divMensagem.innerHTML=`
+        <div class="alert alert-sucess" role=alert">
+            ${mensagem}
+        </div>`;
+
+    }
+    else{
+        divMensagem.innerHTML=`
+        <div class="alert alert-danger" role=alert">
+            ${mensagem}
+        </div>`;
+
+    }
+
+    setTimeout(()=>{
+        divMensagem.innerHTML='';
+    }, 5000);
+    
 }
