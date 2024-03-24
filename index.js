@@ -6,7 +6,7 @@ import autenticar from './seguranca/autenticar.js';
 
 const host ='0.0.0.0';
 
-const porta = 3000; 
+const porta = 4000; 
 
 const app = express();
 
