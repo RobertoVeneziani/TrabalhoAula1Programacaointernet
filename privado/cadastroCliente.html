@@ -11,6 +11,15 @@
         <div class="container w-60 border p-5">
             <h1>Cadastro de Clientes</h1>
             <form id="formCliente" method="POST" action="#" class="row g-3 needs-validation" novalidate>
+                <div class="row mt-2">
+                <div class="col-md-3">  
+                    <label for="codigo" class="form-label">Codigo:</label>
+                    <input type="text" class="form-control" id="codigo" name="codigo" value="" required disabled>
+                    <div class="invalid-feedback">
+                        Por favor, informe o codigo!
+                    </div>
+                </div>
+                </div>
                 <div class="col-md-4">
                     <label for="evento" class="form-label">EVENTO:</label>
                     <input type="text" class="form-control" id="evento" name="evento" value="" required>
@@ -117,7 +126,7 @@
 
         </div>
         </br>
-        <div id="espacoTabela">
+        <div class='container' id="espacoTabela">
             
         </div>
     </body>
