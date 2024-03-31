@@ -5,7 +5,7 @@ window.onload = buscarClientes;
 
 function validarFormulario(evento){
     if (formularioCliente.checkValidity()){
-        formularioCliente.classList.romove( "was-validated" );
+        formularioCliente.classList.remove("was-validated");
         const evento = document.getElementById('evento').value;
         const data = document.getElementById("data").value;
         const local = document.getElementById("local").value;
@@ -51,18 +51,18 @@ function cadastrarCliente(cliente){
             }
     })
     .catch((erro) =>{
-        mostrarMensagem(erro.mensage, false)
+        mostrarMensagem(erro.message, false)
     });
 }
 
 
 function buscarClientes(){
     fetch('http://localhost:3000/clientes',{method:  'GET'})
-    .then(responsta=>{
+    .then(resposta=>{
         return resposta.json();
     })
     .then((dados)=>{
-        if (Arrey.isArrey(dados)){
+        if (Array.isArray(dados)){
             exibirTabelaClientes(dados);    
         }
         else{
