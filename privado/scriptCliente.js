@@ -105,7 +105,7 @@ function exibirTabelaClientes(listaClientes){
         tabela.className = 'table table-striped table-hover';
         const cabecalho = document.createElement('thead');
         cabecalho.innerHTML = 
-            <tr>
+            `<tr>
                 <th>#</th>
                 <th>evento</th>
                 <th>data</th>
@@ -120,8 +120,7 @@ function exibirTabelaClientes(listaClientes){
                 <th>telefone</th>
                 <th>email</th>
                 <th>ações</th>
-            </tr>
-            ;
+            </tr>`;
         tabela.appendChild(cabecalho);
         const corpo = document.createElement('tbody');
         for (let i = 0; i < listaClientes.length; i++){
@@ -138,7 +137,7 @@ function exibirTabelaClientes(listaClientes){
                 <td>${cliente.nome}</td>
                 <td>${cliente.endereco}</td>
                 <td>${cliente.cidade}</td>
-                <td>${cliente.estado}</td>
+                <td>${cliente.uf}</td>
                 <td>${cliente.telefone}</td>
                 <td>${cliente.email}</td>
                 <td>
@@ -152,7 +151,7 @@ function exibirTabelaClientes(listaClientes){
                                                         '${cliente.endereco}',
                                                         '${cliente.bairro}',
                                                         '${cliente.cidade}',
-                                                        '${cliente.estado}',
+                                                        '${cliente.uf}',
                                                         '${cliente.telefone}',
                                                         '${cliente.email}')">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-square" viewBox="0 0 16 16">
@@ -170,7 +169,7 @@ function exibirTabelaClientes(listaClientes){
     }
 }
 
-function selecionarCliente(codigo, evento, data, local, quantidade, preco, cpf, nome, endereco, bairro, cidade, estado, telefone, email){
+function selecionarCliente(codigo, evento, data, local, quantidade, preco, cpf, nome, endereco, bairro, cidade, uf, telefone, email){
     document.getElementById('codigo').value = codigo;
     document.getElementById('evento').value = evento;
     document.getElementById('data').value = data;
@@ -182,7 +181,7 @@ function selecionarCliente(codigo, evento, data, local, quantidade, preco, cpf, 
     document.getElementById('endereco').value = endereco;
     document.getElementById('bairro').value= bairro;
     document.getElementById('cidade').value = cidade;   
-    document.getElementById('estado').value = estado;
+    document.getElementById('uf').value = uf;
     document.getElementById('telefone').value = telefone;   
     document.getElementById('email').value = email;
 }
